@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from "react";
 import Dropdown from "./Dropdown";
-import {ZipCode, Suggestions} from "../commons/types";
+import {ZipCode} from "../commons/types";
 import {isInvalidKey, suggestZipCodes, isValidZipCode} from "../utils/helpers";
 
 
 const Input = () => {
-    const [zipCode, setZipCode] = useState<ZipCode>("")
+    const [zipCode, setZipCode] = useState<string | null>("")
     const [isValidZip, setIsValidZip] = useState(false)
-    const [suggestions, setSuggestions] = useState<Suggestions>(null)
+    const [suggestions, setSuggestions] = useState<string[] | null>(null)
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
         setZipCode(event.target.value);

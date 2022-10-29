@@ -59,4 +59,5 @@ body {
 }
 .error{
     color: red;
+    padding-top: 5px;
 }

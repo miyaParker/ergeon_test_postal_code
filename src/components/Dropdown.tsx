@@ -1,9 +1,9 @@
-import {DropdownProps, ProvinceType} from "../commons/types";
+import {DropdownProps } from "../commons/types";
 
 const Dropdown = ({suggestions, handleClick}: DropdownProps) => {
     return (
         <div className="dropdown">
-            {suggestions?.map((suggestion: ProvinceType) => <span onClick={handleClick}>{suggestion.zipcode}</span>)}
+            {suggestions?.map((zipcode:string, id:number) => <span key={id} onClick={handleClick}>{zipcode}</span>)}
         </div>
     )
 }

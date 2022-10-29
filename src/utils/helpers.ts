@@ -1,9 +1,9 @@
-import usZipCodeJSON from "../data/zipcodes.us.json";
+import {zipCodes} from "../commons/constants";
 import {ProvinceType} from "../commons/types";
 import React from "react";
 
 export const suggestZipCodes = (partial: string) => {
-    const suggestedZipCodes = usZipCodeJSON.filter((province: ProvinceType) => province.zipcode.startsWith(partial))
+    const suggestedZipCodes = zipCodes.filter(code => code.startsWith(partial))
     return suggestedZipCodes
 }
 
@@ -20,5 +20,5 @@ export const isInvalidKey = (event: React.KeyboardEvent, element: HTMLInputEleme
 }
 
 export const isValidZipCode = (zipCode: string) => {
-    return usZipCodeJSON.filter((province: ProvinceType) => zipCode === province.zipcode)
+    return zipCodes.filter(code => zipCode === code)
 }

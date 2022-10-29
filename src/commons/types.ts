@@ -15,8 +15,8 @@ export type ProvinceType = {
 }
 
 export type DropdownProps = {
-    suggestions: ProvinceType[]|null;
+    suggestions: string[]|null;
     handleClick: (event: React.MouseEvent<HTMLSpanElement>) => void
 }
-export type Suggestions = ProvinceType[] | null
+export type Suggestions = string[] | null
 export type ZipCode = string | null
