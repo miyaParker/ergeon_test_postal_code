@@ -6,7 +6,6 @@ import {isInvalidKey, suggestZipCodes, isValidZipCode} from "../utils/helpers";
 
 const Input = () => {
     const [zipCode, setZipCode] = useState<string | null>("")
-    const [isValidZip, setIsValidZip] = useState(false)
     const [suggestions, setSuggestions] = useState<string[] | null>(null)
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -23,7 +22,6 @@ const Input = () => {
         //reset autocomplete when the zipcode is less than 2 digits or exactly a 5-digit number
         if (zipCode?.length === 5) {
             setSuggestions(null)
-            setIsValidZip(isValidZipCode(zipCode).length > 0)
         }
         if (zipCode !== null && zipCode.length < 2) setSuggestions(null);
 
@@ -38,9 +36,7 @@ const Input = () => {
         const element = event.target as HTMLInputElement
         if (isInvalidKey(event, element)) event.preventDefault();
     }
-    const showError = () => {
-        return Boolean(zipCode?.length === 5 && !isValidZip)
-    }
+
     return (
         <form className="form">
             <label>Zip code</label>
@@ -49,7 +45,6 @@ const Input = () => {
                    onPaste={(event) => {
                        event.preventDefault();
                    }}/>
-            {showError() && <p className="error">The zip code is invalid</p>}
             {suggestions !== null && suggestions.length > 0 &&
                 <Dropdown suggestions={suggestions} handleClick={handleClick}/>}
         </form>
