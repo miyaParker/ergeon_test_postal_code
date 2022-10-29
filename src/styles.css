@@ -1,4 +1,62 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    color: #313E49;
+}
+
+body {
+    background-color: #F4F4F6;
+}
+
 .App {
-  font-family: sans-serif;
-  text-align: center;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.form {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: #FFFFFF;
+    height: 300px;
+    padding: 50px;
+    align-items: flex-start;
+    border-radius: 10px;
+    margin-top: 50px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.form input{
+    border-radius: 10px;
+    padding: 15px 10px;
+    font-size: 20px;
+    width: 70%;
+    border: 2px solid #3D52D5;
+}
+.form label{
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #3D52D5;
+}
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    max-height: 350px;
+    justify-self: flex-end;
+    width: 70%;
+    border-radius: 10px;
+    background-color: #F4F4F6;
+    padding: 15px 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    text-align: left;
+}
+.dropdown span{
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+.error{
+    color: red;
 }
